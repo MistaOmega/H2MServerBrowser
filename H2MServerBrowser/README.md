@@ -2,7 +2,7 @@
 This is a simple server browser for the H2M Project. Written in C# using Avalonia UI
 
 ## Features
-- Loads all servers from https://master.iw4.zip/servers not just the top 100
+- Loads all servers from https://master.iw4.zip/servers not just the top 100 using the API endpoint
 - Pings all the servers asynchronously
 - Full sorting support for all columns
 - Filtering support for all columns
