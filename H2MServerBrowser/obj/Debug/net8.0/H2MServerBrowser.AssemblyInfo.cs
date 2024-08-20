@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("H2MServerBrowser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0359d8e9ad4cebe0196ec22024d706dbe767b10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("H2MServerBrowser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("H2MServerBrowser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

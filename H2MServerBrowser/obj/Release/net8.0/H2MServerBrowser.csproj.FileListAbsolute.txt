@@ -14,14 +14,17 @@ C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.OpenGL.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Vulkan.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.dll
+C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Controls.ColorPicker.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Controls.DataGrid.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Desktop.dll
+C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Diagnostics.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Fonts.Inter.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.FreeDesktop.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Native.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Remote.Protocol.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Skia.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Themes.Fluent.dll
+C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Themes.Simple.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.Win32.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\Avalonia.X11.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Release\net8.0\CommunityToolkit.Mvvm.dll
@@ -69,4 +72,3 @@ C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Release\net8.0
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Release\net8.0\H2MServerBrowser.csproj.CopyComplete
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Release\net8.0\H2MServerBrowser.genruntimeconfig.cache
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Release\net8.0\ref\H2MServerBrowser.dll
-C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Release\net8.0\H2MServerBrowser.sourcelink.json
