@@ -72,3 +72,4 @@ C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Debug\net8.0\M
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Debug\net8.0\Material.Ripple.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Debug\net8.0\Material.Styles.dll
 C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\bin\Debug\net8.0\Material.Avalonia.DataGrid.dll
+C:\Users\Jack\RiderProjects\H2MServerBrowser\H2MServerBrowser\obj\Debug\net8.0\H2MServerBrowser.sourcelink.json
