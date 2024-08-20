@@ -17,7 +17,7 @@ public class ServerService
     {
         using var httpClient = new HttpClient();
         var response = await httpClient.GetStringAsync(url);
-        var instances = JsonSerializer.Deserialize<List<APIResponse.Instance>>(response);
+        var instances = JsonSerializer.Deserialize<List<ApiResponse.Instance>>(response);
 
         var list = new List<ServerData>();
         foreach (var instance in instances)
