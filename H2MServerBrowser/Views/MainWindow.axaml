@@ -1,0 +1,68 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:H2MServerBrowser.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="H2MServerBrowser.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="H2M Server Browser">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:Card Margin="16" Grid.Row="0">
+            <TextBlock Classes="Headline4" Text="H2M Server Browser"></TextBlock>
+        </controls:Card>
+
+        <controls:Card Margin="16" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Name="Block" Classes="Headline6" Text="Server List" Grid.Row="0"/>
+                <controls:Card Margin="0,16" Grid.Row="1">
+                    <StackPanel Orientation="Vertical">
+                    <TextBlock Classes="Headline6" Text="Filters"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1">
+                            <TextBox Width="500" Margin="5" Watermark="Hostname" Text="{Binding HostnameFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="150" Margin="5" Watermark="IP" Text="{Binding IpFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="75" Margin="5" Watermark="Port" Text="{Binding PortFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="100" Margin="5" Watermark="Gametype" Text="{Binding GametypeFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="100" Margin="5" Watermark="Map" Text="{Binding MapFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="100" Margin="5" Watermark="Current Clients" Text="{Binding CurrentClientCountFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="100" Margin="5" Watermark="Max Clients" Text="{Binding MaxClientCountFilter, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Width="75" Margin="5" Watermark="Ping" Text="{Binding PingFilter, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </StackPanel>
+                </controls:Card>
+
+                <DataGrid Name="ServerGrid" ItemsSource="{Binding FilteredServerDataList}" AutoGenerateColumns="False" Grid.Row="2"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Hostname" Binding="{Binding Hostname}" SortMemberPath="Hostname" />
+                        <DataGridTextColumn Header="IP" Binding="{Binding Ip}" SortMemberPath="Ip" />
+                        <DataGridTextColumn Header="Port" Binding="{Binding Port}" SortMemberPath="Port" />
+                        <DataGridTextColumn Header="Gametype" Binding="{Binding Gametype}" SortMemberPath="Gametype" />
+                        <DataGridTextColumn Header="Map" Binding="{Binding Map}" SortMemberPath="Map" />
+                        <DataGridTextColumn Header="Current Clients" Binding="{Binding CurrentClientCount}" SortMemberPath="CurrentClientCount" />
+                        <DataGridTextColumn Header="Max Clients" Binding="{Binding MaxClientCount}" SortMemberPath="MaxClientCount" />
+                        <DataGridTextColumn Header="Ping" Binding="{Binding PingDisplay}" SortMemberPath="PingResult" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </controls:Card>
+    </Grid>
+</Window>

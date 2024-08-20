@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="H2MServerBrowser/App.axaml" value="H2MServerBrowser/H2MServerBrowser.csproj" />
+        <entry key="H2MServerBrowser/Views/MainWindow.axaml" value="H2MServerBrowser/H2MServerBrowser.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

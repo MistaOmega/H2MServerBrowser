@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2MServerBrowser", "H2MServerBrowser\H2MServerBrowser.csproj", "{ACAEAFBD-4FB6-4598-BC2E-D0DDEA4D554F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACAEAFBD-4FB6-4598-BC2E-D0DDEA4D554F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAEAFBD-4FB6-4598-BC2E-D0DDEA4D554F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAEAFBD-4FB6-4598-BC2E-D0DDEA4D554F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAEAFBD-4FB6-4598-BC2E-D0DDEA4D554F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
