@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.NetworkInformation;
+using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using H2MServerBrowser.Models;
 using HtmlAgilityPack;
@@ -10,32 +13,32 @@ namespace H2MServerBrowser.Services;
 public class ServerService
 {
     private readonly HtmlWeb _web = new();
-
     public async Task<List<ServerData>> FetchServerDataAsync(string url)
     {
-        var doc = await _web.LoadFromWebAsync(url);
-        var h2MServers = doc.GetElementbyId("H2M_Servers");
-        var serverNodes = h2MServers.Descendants("tr");
+        using var httpClient = new HttpClient();
+        var response = await httpClient.GetStringAsync(url);
+        var instances = JsonSerializer.Deserialize<List<APIResponse.Instance>>(response);
 
         var list = new List<ServerData>();
-        foreach (var node in serverNodes)
+        foreach (var instance in instances)
         {
-            var ip = node.GetAttributeValue("data-ip", string.Empty);
-            var port = node.GetAttributeValue("data-port", string.Empty);
-
-            if (!string.IsNullOrEmpty(ip) && !string.IsNullOrEmpty(port))
+            foreach (var server in instance.Servers)
             {
-                list.Add(new ServerData
+                if (server.Game == "H2M")
                 {
-                    Hostname = node.SelectSingleNode(".//td[@data-hostname]").InnerText.Trim(),
-                    Ip = ip,
-                    Port = int.Parse(port),
-                    Gametype = node.SelectSingleNode(".//td[@data-gametype]").InnerText.Trim(),
-                    Map = node.SelectSingleNode(".//td[@data-map]").InnerText.Trim(),
-                    CurrentClientCount = int.Parse(node.SelectSingleNode(".//td[@data-clientnum]").InnerText.Split('/')[0].Trim()),
-                    MaxClientCount = int.Parse(node.SelectSingleNode(".//td[@data-clientnum]").InnerText.Split('/')[1].Trim()),
-                    PingResult = Int64.MaxValue // Pinging
-                });
+                    var filteredHostname = Regex.Replace(server.Hostname, @"\^[a-zA-Z0-9]|:", string.Empty).Replace("^", "");
+                    list.Add(new ServerData
+                    {
+                        Hostname = filteredHostname,
+                        Ip = server.Ip,
+                        Port = server.Port,
+                        Gametype = server.Gametype,
+                        Map = server.Map,
+                        CurrentClientCount = server.ClientNum,
+                        MaxClientCount = server.MaxClientNum,
+                        PingResult = Int64.MaxValue // Pinging
+                    });
+                }
             }
         }
         PingServers(list);
