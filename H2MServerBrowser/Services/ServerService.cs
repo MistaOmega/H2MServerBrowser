@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text.Json;
@@ -20,26 +21,30 @@ public class ServerService
         var instances = JsonSerializer.Deserialize<List<ApiResponse.Instance>>(response);
 
         var list = new List<ServerData>();
-        foreach (var instance in instances)
+        if(instances == null)
         {
-            foreach (var server in instance.Servers)
+            return list;
+        }
+
+        foreach (var server in from instance in instances from server in instance.Servers where server.Game == "H2M" select server)
+        {
+            if(server.Hostname == null || server.Ip == null || server.Port == 0 || server.Ip == "localhost")
             {
-                if (server.Game == "H2M")
-                {
-                    var filteredHostname = Regex.Replace(server.Hostname, @"\^[a-zA-Z0-9]|:", string.Empty).Replace("^", "");
-                    list.Add(new ServerData
-                    {
-                        Hostname = filteredHostname,
-                        Ip = server.Ip,
-                        Port = server.Port,
-                        Gametype = server.Gametype,
-                        Map = server.Map,
-                        CurrentClientCount = server.ClientNum,
-                        MaxClientCount = server.MaxClientNum,
-                        PingResult = Int64.MaxValue // Pinging
-                    });
-                }
+                continue;
             }
+
+            var filteredHostname = Regex.Replace(server.Hostname, @"\^[a-zA-Z0-9]|:", string.Empty).Replace("^", "");
+            list.Add(new ServerData
+            {
+                Hostname = filteredHostname,
+                Ip = server.Ip,
+                Port = server.Port,
+                Gametype = server.Gametype,
+                Map = server.Map,
+                CurrentClientCount = server.ClientNum,
+                MaxClientCount = server.MaxClientNum,
+                PingResult = Int64.MaxValue // Pinging
+            });
         }
         PingServers(list);
         return list;
