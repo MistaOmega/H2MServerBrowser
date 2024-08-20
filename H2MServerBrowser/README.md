@@ -1,6 +1,7 @@
 # H2M Server Browser
 This is a simple server browser for the H2M Project. Written in C# using Avalonia UI
 
+![image](https://github.com/user-attachments/assets/8eecc8a4-e36b-4863-bfc8-d9515148ad18)
 ## Features
 - Loads all servers from https://master.iw4.zip/servers not just the top 100 using the API endpoint
 - Pings all the servers asynchronously
