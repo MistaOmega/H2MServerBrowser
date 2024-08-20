@@ -33,6 +33,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Name="Block" Classes="Headline6" Text="Server List" Grid.Row="0"/>
+                <Button Content="Refresh" Command="{Binding RefreshCommand}" Grid.Row="0" HorizontalAlignment="Right" Margin="5"/>
                 <controls:Card Margin="0,16" Grid.Row="1">
                     <StackPanel Orientation="Vertical">
                     <TextBlock Classes="Headline6" Text="Filters"></TextBlock>

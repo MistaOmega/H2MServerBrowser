@@ -7,9 +7,9 @@ This is a simple server browser for the H2M Project. Written in C# using Avaloni
 - Full sorting support for all columns
 - Filtering support for all columns
 - Copies the connect string to the clipboard when clicking an entry
+- Refresh button to refresh the server list at any time
 
 ## To Do
-- Add a refresh button
 - Add a way to change the master server URL
 - Have clicking the server entry connect you directly to the server
 - Proper sorting for the IP Address column

@@ -5,12 +5,12 @@ namespace H2MServerBrowser.Models;
 
 public abstract class ApiResponse
 {
-    public abstract class Instance
+    public class Instance
     {
         [JsonPropertyName("servers")] public List<Server> Servers { get; set; }
     }
 
-    public abstract class Server
+    public class Server
     {
         [JsonPropertyName("ip")] public string? Ip { get; set; }
 

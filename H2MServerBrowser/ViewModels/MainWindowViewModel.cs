@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.Input;
 using H2MServerBrowser.Models;
 using H2MServerBrowser.Services;
 
@@ -20,6 +21,7 @@ public class MainWindowViewModel : ViewModelBase
     private string _currentClientCountFilter = "";
     private string _maxClientCountFilter = "";
     private string _pingFilter = "";
+    public AsyncRelayCommand RefreshCommand { get; }
 
     public MainWindowViewModel(ServerService serverService)
     {
@@ -27,9 +29,10 @@ public class MainWindowViewModel : ViewModelBase
         ServerDataList = new ObservableCollection<ServerData>();
         FilteredServerDataList = new ObservableCollection<ServerData>();
         _ = FetchDataAsync();
+        RefreshCommand = new AsyncRelayCommand(async () => await FetchDataAsync());
     }
 
-    public MainWindowViewModel()
+    public MainWindowViewModel() // for display view only
     {
         _serverService = new ServerService();
         ServerDataList = new ObservableCollection<ServerData>();
