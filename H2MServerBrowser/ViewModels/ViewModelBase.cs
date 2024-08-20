@@ -4,5 +4,5 @@ namespace H2MServerBrowser.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {
-    
+
 }

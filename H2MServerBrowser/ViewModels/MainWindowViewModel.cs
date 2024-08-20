@@ -129,7 +129,7 @@ public class MainWindowViewModel : ViewModelBase
 
     private async Task FetchDataAsync()
     {
-        var data = await _serverService.FetchServerDataAsync("https://master.iw4.zip/servers");
+        var data = await _serverService.FetchServerDataAsync("https://master.iw4.zip/instance/");
         ServerDataList.Clear();
         foreach (var item in data)
         {
